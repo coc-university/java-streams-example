@@ -103,6 +103,12 @@ Stream<R> outputStream = inputStream.gather(gatherer);
 ### 3.4 Anwendungsfälle
 - generell bei komplexeren Verarbeitungsschritten
 - und/oder wenn der Zustand eine Rolle spielt
+- wo die Verarbeitung eines Elements von seinem Kontext innerhalb des Streams abhängt
+- Beispiele (generiert von KI)
+  - Berechnung eines gleitenden Durchschnitts der letzten 3 Messwerte in einem Sensor-Datenstrom (Windowing)
+  - Gruppieren von Logeinträgen, die innerhalb einer bestimmten Zeitspanne aufeinander folgen
+  - Erkennen von aufeinanderfolgenden "Start"- und "End"-Ereignissen in einem Workflow
+  - Anreichern von Verkaufsdaten mit Informationen über vorherige Käufe desselben Kunden innerhalb einer bestimmten Sitzung
 
 ### 3.5 Links
 - Offizielles Dokument: https://openjdk.org/jeps/485
