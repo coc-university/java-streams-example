@@ -7,7 +7,6 @@
   - imperativ, Schritt für Schritt Anweisungen
 - zb for oder while Schleifen
 
-----------------------------------------------------------------------------------------------------
 
 ## 2. Aktuelle Streams API
 
@@ -41,7 +40,6 @@
   - T collect(Collector) -> Struktur erzeugen
   - count(), max() → Einzelnen Wert erzeugen
 
-----------------------------------------------------------------------------------------------------
 
 ## 3. Zukunft mit Stream Gatherers
 
@@ -111,9 +109,11 @@ Stream<R> outputStream = inputStream.gather(gatherer);
   - Anreichern von Verkaufsdaten mit Informationen über vorherige Käufe desselben Kunden innerhalb einer bestimmten Sitzung
 
 ### 3.5 Links
-- Offizielles Dokument: https://openjdk.org/jeps/485
+- Viktor Klang (Architekt Stream Gatherers)
+    - Offizielles Dokument: https://openjdk.org/jeps/485
+    - YouTube-Video (JavaOne 2025): https://www.youtube.com/watch?v=v_5SKpfkI2U&t=2207s
+- Dan Vega (Spring Developer Advocate)
+  - Artikel: https://www.danvega.dev/blog/stream-gatherers
+  - GitHub-Repo: https://github.com/danvega/gatherer
+  - YouTube-Video: https://www.youtube.com/watch?v=hIbCu1slooE&t=1147s
 - Deutscher Artikel: https://www.heise.de/hintergrund/Core-Java-Die-Stream-API-im-Wandel-funktionale-Datenfluesse-in-Java-10353156.html?seite=2
-- Dan Vega (Spring Developer Advocate aus USA)
-  - https://www.danvega.dev/blog/stream-gatherers
-  - https://github.com/danvega/gatherer
-  - https://www.youtube.com/watch?v=hIbCu1slooE&t=1147s
