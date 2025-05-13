@@ -1,6 +1,5 @@
 package com.codecamp.streams;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -8,7 +7,7 @@ public class StreamsExample {
 
     public static void main(String[] args) {
 
-        List<String> tiere = Arrays.asList("Hund", "Katze", "Maus", "Elefant", "Affe", "Vogel");
+        List<String> tiere = List.of("Hund", "Katze", "Maus", "Elefant", "Affe", "Vogel");
 
         // @FunctionalInterface mit Single Abstract Method
         Predicate<String> tierFilter = tier -> tier.length() == 4;
