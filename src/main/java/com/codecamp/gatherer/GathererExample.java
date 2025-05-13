@@ -11,8 +11,13 @@ public class GathererExample {
 
         Stream<String> tiere = Stream.of("Hund", "Katze", "Maus", "Elefant", "Affe", "Vogel", "Fuchs");
 
-        int batchSize = 3;
+        // In diesem Beispiel werden Gruppen gebildet.
+        // Sobald eine Gruppe voll ist, beginnt die nächste Gruppe
+        int gruppeMaximal = 3;
 
+        // Wichtig: Java 24 in der pom aktivieren
+        // den Gatherer könnte man herausziehen in eine eigene Klasse
+        // Generics: Input, State, Output
         Gatherer<String, List<String>, List<String>> gruppiereTiere = Gatherer.ofSequential(
 
                 // Initialisierung vom Zustand
@@ -21,7 +26,7 @@ public class GathererExample {
                 // Verarbeitung jedes Elements und Update vom Zustand
                 (zustand, tier, downstream) -> {
                     zustand.add(tier);
-                    if (zustand.size() == batchSize) {
+                    if (zustand.size() == gruppeMaximal) { // Gruppe voll?
                         downstream.push(new ArrayList<>(zustand)); // gib Kopie der Gruppe weiter
                         zustand.clear(); // Zustand leeren für nächste Gruppe
                     }
@@ -36,6 +41,7 @@ public class GathererExample {
                 }
         );
 
+        // Gatherer auf den Stream anwenden
         tiere.gather(gruppiereTiere)
                 .forEach(gruppe -> System.out.println("Gruppe: " + gruppe));
     }
